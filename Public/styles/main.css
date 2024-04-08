@@ -1,0 +1,108 @@
+body{
+  background: url("../images/breaking-bad-wallpaper.jpg");
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+}
+:root {
+    --card-height: 65vh;
+    --card-width: calc(var(--card-height) / 1.5);
+}
+
+h1 {
+    color: white;
+    font-family: "Titan One", cursive;
+    margin-bottom: 20px;
+}
+.card {
+    background: url("../images/walter-bad-jessey.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: var(--card-height);
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    font-family: "Gloria Hallelujah", cursive;
+}
+
+.card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+        var(--rotate),
+        #42cf2f,
+        #eff238 43%,
+        #13c200
+    );
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+}
+
+.card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+        var(--rotate),
+        #42cf2f,
+        #eff238 43%,
+        #13c200
+    );
+    opacity: 1;
+    transition: opacity 0.5s;
+    animation: spin 2.5s linear infinite;
+}
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+    100% {
+        --rotate: 360deg;
+    }
+}
+
+.author {
+    color: white;
+    font-size: 26px;
+    font-family: "Titan One", cursive;
+    margin-top: 30px;
+}
+.text-field{
+    background-color: #42cf2f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  
